@@ -1,0 +1,16 @@
+#query_input{
+    width: 45%;
+    margin-top: 12.5%;
+}
+
+#submit_button {
+    margin-top: 4%;
+    position: relative;
+    width: 15%;
+    height: 15%;
+    left: 44.5%;
+}
+
+#query {
+    height: 20%;
+}

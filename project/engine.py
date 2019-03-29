@@ -1,4 +1,6 @@
 import os
+import sys
+sys.path.append('C:\\Users\\wzixu\\Desktop\\webdev\\Extract-Data-Studio-Hopkins-Analytics\\project')
 import random
 import numpy as np
 from scipy import stats
@@ -590,7 +592,7 @@ class Oracle:
             'against': lambda D: self.compare_helper_(c_key)
         }[f_key](self.config.filtered)
 
-        return result;
+        return result
 
     def generate_filter_criteria(self, args, hint=None):
 
@@ -1359,9 +1361,9 @@ class Oracle:
                 e_list[pos_s:(pos_e + 1)] = [''.join(e_list[pos_s:(pos_e + 1)])]
                 pos_s, pos_e = -1, -1
 
-        print('filtered: ', end='\t');
+        print('filtered: ', end='\t')
         print(f_list)
-        print('entity: ', end='\t');
+        print('entity: ', end='\t')
         print(e_list)
 
         return f_list, e_list
@@ -1398,6 +1400,9 @@ class Oracle:
 
 def main():
     desc_filename = os.path.join(os.getcwd(), '2017_updated_final.csv')
+    print(desc_filename)
+    # desc_filename = '2017_updated_final.csv'
+    # print(desc_filename)
     config = Config(desc_filename)
     oracle = Oracle(config)
     qry = "What is the strike rate of ranger pitchers on fastballs or curveballs"
@@ -1407,6 +1412,7 @@ def main():
     # plot_type is string ('time-series', 'bar', 'png') indicating what plot to make
     # rterms is python list of relevance feedback query suggestions
     result, sample_size, data, plot_type, rterms = oracle.run(qry)
+    print(result)
     print('executed oracle to completion')
 
 if __name__ == "__main__":
